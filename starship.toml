@@ -1,0 +1,30 @@
+
+[package]
+disabled = true
+
+[battery]
+disabled = true
+
+[java]
+disabled = true
+
+[git_status]
+modified = "*"
+style = "yellow"
+
+[nodejs]
+disabled = true
+
+[python]
+disabled = true
+
+[terraform]
+disabled = true
+
+[kubernetes]
+disabled = false
+format = '[& $context](dimmed green) '
+
+[kubernetes.context_aliases]
+"minikube" = "mini"
+

@@ -64,17 +64,7 @@ function bump-starship() {
 	sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --bin-dir ~/.local/bin
 }
 
-
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/max/.sdkman"
-[[ -s "/home/max/.sdkman/bin/sdkman-init.sh" ]] && source "/home/max/.sdkman/bin/sdkman-init.sh"
+PREFIX="$(brew --prefix)"
+source $PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 eval "$(starship init zsh)"
-
-## other setup stuff
-
-# iterm2 theme: Solarized Dark Higher Contrast
-# https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/schemes/Solarized%20Dark%20Higher%20Contrast.itermcolors
-

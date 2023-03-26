@@ -32,6 +32,8 @@ function _lsd() {
 function _cargo() {
 	if [[ -z "$(which cargo)" ]]; then
 		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+		cargo install bat
+		cargo install fd-find
 	fi
 }
 
@@ -59,6 +61,8 @@ _starship
 _sdkman
 
 brew install -q shfmt tfenv zsh-autosuggestions ripgrep neovim
+
+git config --global push.default current
 
 printf "\n===> NOTE: if a zsh-autosuggestions related error follows this, ignore it and open a new terminal.\n\n"
 

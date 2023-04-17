@@ -31,7 +31,7 @@ function gpb() {
 }
 
 function gcm() {
-	B=$(git symbolic-ref /refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+	B=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
 	git checkout $B
 }
 

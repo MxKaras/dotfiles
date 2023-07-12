@@ -4,6 +4,7 @@ mkdir -p ~/.local/bin
 mkdir -p ~/.local/share
 mkdir -p ~/.local/state
 mkdir -p ~/.config
+mkdir ~/workspace
 
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -12,6 +13,8 @@ cp .zshrc ~/.zshrc
 function _homebrew() {
 	if [[ -z "$(which brew)" ]]; then
 		/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+		(echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> $HOME/.zprofile
+		eval "$(/opt/homebrew/bin/brew shellenv)"
 	fi
 }
 
@@ -62,7 +65,13 @@ _sdkman
 
 brew install -q shfmt tfenv zsh-autosuggestions ripgrep neovim
 
+# TODO put these in seperate functions
+brew install -q fnm
+echo "v16.20.1" >> ~/workspace/.node_version
+
+echo ".idea" >> ~/workspace/.gitignore
 git config --global push.default current
+git config --global core.excludesfile ~/workspace/.gitignore
 
 printf "\n===> NOTE: if a zsh-autosuggestions related error follows this, ignore it and open a new terminal.\n\n"
 

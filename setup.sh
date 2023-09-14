@@ -35,8 +35,6 @@ function _lsd() {
 function _cargo() {
 	if [[ -z "$(which cargo)" ]]; then
 		curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-		cargo install bat
-		cargo install fd-find
 	fi
 }
 
@@ -63,7 +61,11 @@ _cargo
 _starship
 _sdkman
 
-brew install -q shfmt tfenv zsh-autosuggestions ripgrep neovim
+brew tap homebrew/cask-fonts && brew install --cask font-symbols-only-nerd-font
+brew install --cask font-jetbrains-mono-nerd-font
+brew install -q shfmt tfenv zsh-autosuggestions ripgrep neovim jq ncdu fd bat
+# stuff for yazi
+brew install -q ffmpegthumbnailer unar poppler fzf zoxide yazi
 
 # TODO put these in seperate functions
 brew install -q fnm

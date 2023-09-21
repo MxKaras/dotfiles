@@ -10,6 +10,10 @@ alias k="kubectl"
 alias tf="terraform"
 alias tg="terragrunt"
 
+function cdd() {
+	cd $(fd --type directory -d 3 . ~/workspace | fzf)
+}
+
 function ktx() {
 	kubectl config use-context $1
 }

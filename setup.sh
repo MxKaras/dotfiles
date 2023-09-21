@@ -63,9 +63,9 @@ _sdkman
 
 brew tap homebrew/cask-fonts && brew install --cask font-symbols-only-nerd-font
 brew install --cask font-jetbrains-mono-nerd-font
-brew install -q shfmt tfenv zsh-autosuggestions ripgrep neovim jq ncdu fd bat
+brew install -q shfmt tfenv zsh-autosuggestions ripgrep neovim jq ncdu fd bat fzf
 # stuff for yazi
-brew install -q ffmpegthumbnailer unar poppler fzf zoxide yazi
+brew install -q ffmpegthumbnailer unar poppler zoxide yazi
 
 # TODO put these in seperate functions
 brew install -q fnm

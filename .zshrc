@@ -46,6 +46,15 @@ function gcmd() {
 	gpb
 }
 
+function gb() {
+	git checkout $(git branch | fzf)
+}
+
+function gba() {
+	b=$(git branch -a | sed 's/remotes\/origin\///' | fzf)
+	git checkout $(echo $b | tr -s ' ' | cut -d ' ' -f 2)
+}
+
 alias gfo="git fetch origin --prune"
 alias gs="git status"
 alias gcan="git commit -a --amend --no-edit"
